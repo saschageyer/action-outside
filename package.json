@@ -1,0 +1,32 @@
+{
+  "name": "action-outside",
+  "version": "1.0.0",
+  "description": "Invoke a callback function when clicked or tabbed outside one or multiple DOM elements.",
+  "main": "docs/action-outside.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saschageyer/action-outside.git"
+  },
+  "scripts": {
+    "clean": "rm -rf docs/action-outside.min.js",
+    "lint": "eslint action-outside.js",
+    "babel": "babel action-outside.js --presets=env --out-file action-outside-compiled.js",
+    "uglify": "uglifyjs action-outside-compiled.js > docs/action-outside.min.js & rm -rf action-outside-compiled.js",
+    "serve": "browser-sync start --server --startPath \"docs/\" --files \"docs/\"",
+    "dev": "npm run clean && npm run lint & npm run babel & npm run uglify & npm run serve"
+  },
+  "author": "Sascha Geyer <mail@saschageyer.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saschageyer/action-outside/issues"
+  },
+  "homepage": "https://saschageyer.github.io/action-outside/",
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-core": "latest",
+    "babel-preset-env": "latest",
+    "browser-sync": "latest",
+    "eslint": "latest",
+    "uglify-js": "latest"
+  }
+}
