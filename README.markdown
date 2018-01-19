@@ -1,9 +1,54 @@
-### :fire: action-outside :fire:
+action-outside :mag_right:
 -------
  _Invoke a callback function when clicked or tabbed outside one or multiple DOM elements._
-```javascript
-const actionOutsideNavigation = new ActionOutside(navigation, closeNavigation);
-actionOutsideNavigation.listen(true);
-// ...
-actionOutsideNavigation.listen(false);
+
+ ```javascript
+ const foo = document.querySelector('.foo');
+ const myActionOutside = new ActionOutside(foo, () => {
+   console.log('cliked or tabbed outside foo!');
+ });
+ ```
+
+#### NPM
+```sh
+npm install action-outside
 ```
+
+### parameters
+```javascript
+const myActionOutside = new ActionOutside(elements, callback);
+```
+parameter | type | description
+------ | ---- | ------- | -----------
+elements | DOM element or array of DOM elements | clicking or tabbing outside these elements will invoke the callback function
+callback | function | is invoked after a click or tab outside the specified elements
+
+### methods
+```javascript
+const myActionOutside = new ActionOutside(elements, callback);
+myActionOutside.listen(true);
+myActionOutside.listen(false);
+```
+method | argument type | description
+------ | ---- | -----------
+listen | boolean | add or remove the event listener for mouseup (click) and keyup (tab)
+
+#### Demo
+[https://saschageyer.github.io/action-outside/](https://saschageyer.github.io/action-outside/)
+```javascript
+const dropdown = document.querySelector('.dropdown');
+const dropdownButton = document.querySelector('.dropdown__button');
+const dropdownList = document.querySelector('.dropdown__list');
+let expanded = (dropdownButton.getAttribute('aria-expanded') == 'true');
+
+dropdownButton.addEventListener('click', toggleDropdown);
+const dropdownActionOutside = new ActionOutside(dropdown, toggleDropdown);
+
+function toggleDropdown() {
+  dropdownButton.setAttribute('aria-expanded', !expanded);
+  dropdownList.setAttribute('aria-hidden', expanded);
+  dropdownActionOutside.listen(!expanded);
+  expanded = !expanded;
+}
+```
+Note: you most likely want your callback function to remove the event listener by using the listen(false) method
