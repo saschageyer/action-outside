@@ -9,32 +9,31 @@ action-outside :mag_right:
  });
  ```
 
-#### NPM
+### NPM
 ```sh
 npm install action-outside
 ```
 
 ### parameters
+parameter | type | description
+------ | ---- | -------
+elements | DOM element or array of DOM elements | clicking or tabbing outside these elements will invoke the callback function
+callback | function | is invoked after a click or tab outside the specified elements
 ```javascript
 const myActionOutside = new ActionOutside(elements, callback);
 ```
-parameter | type | description
------- | ---- | ------- | -----------
-elements | DOM element or array of DOM elements | clicking or tabbing outside these elements will invoke the callback function
-callback | function | is invoked after a click or tab outside the specified elements
 
 ### methods
+method | argument type | description
+------ | ---- | -----------
+.listen() | boolean | add or remove the event listener for mouseup (click) and keyup (tab)
 ```javascript
 const myActionOutside = new ActionOutside(elements, callback);
 myActionOutside.listen(true);
 myActionOutside.listen(false);
 ```
-method | argument type | description
------- | ---- | -----------
-listen | boolean | add or remove the event listener for mouseup (click) and keyup (tab)
 
-#### Demo
-[https://saschageyer.github.io/action-outside/](https://saschageyer.github.io/action-outside/)
+### demo [https://saschageyer.github.io/action-outside/](https://saschageyer.github.io/action-outside/)
 ```javascript
 const dropdown = document.querySelector('.dropdown');
 const dropdownButton = document.querySelector('.dropdown__button');
@@ -51,4 +50,4 @@ function toggleDropdown() {
   expanded = !expanded;
 }
 ```
-Note: you most likely want your callback function to remove the event listener by using the listen(false) method
+Note: you most likely want your callback function to remove the event listener by using the listen(false) method!
