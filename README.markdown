@@ -5,7 +5,7 @@ action-outside :mag_right:
  ```javascript
  const foo = document.querySelector('.foo');
  const myActionOutside = new ActionOutside(foo, () => {
-   console.log('cliked or tabbed outside foo!');
+   console.log('clicked or tabbed outside of foo!');
  });
  ```
 
