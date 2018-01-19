@@ -7,6 +7,7 @@ action-outside :mag_right:
  const myActionOutside = new ActionOutside(foo, () => {
    console.log('clicked or tabbed outside of foo!');
  });
+ myActionOutside.listen(true);
  ```
 
 ### NPM
