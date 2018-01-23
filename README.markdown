@@ -2,6 +2,8 @@ action-outside :mag_right:
 -------
 _Invoke a callback function when clicked or tabbed outside one or multiple DOM elements._
 
+![action-outside](https://github.com/saschageyer/action-outside/blob/master/action-outside.gif)
+
 ```javascript
 import ActionOutside from 'action-outside';
 
