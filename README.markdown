@@ -7,11 +7,11 @@ _Invoke a callback function when clicked or tabbed outside one or multiple DOM e
 ```javascript
 import ActionOutside from 'action-outside';
 
-const foo = document.querySelector('.foo');
-const actionOutsideFoo = new ActionOutside(foo, () => {
-  console.log('clicked or tabbed outside foo!');
+const menu = document.querySelector('.menu');
+const actionOutsideMenu = new ActionOutside(menu, () => {
+  console.log('clicked or tabbed outside menu!');
 });
-actionOutsideFoo.listen(true);
+actionOutsideMenu.listen(true);
 ```
 
 ### [NPM](https://www.npmjs.com/package/action-outside)
