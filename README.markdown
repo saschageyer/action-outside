@@ -4,6 +4,7 @@ _Invoke a callback function when clicked or tabbed outside one or multiple DOM e
 
 ```javascript
 import ActionOutside from 'action-outside';
+
 const foo = document.querySelector('.foo');
 const actionOutsideFoo = new ActionOutside(foo, () => {
   console.log('clicked or tabbed outside foo!');
@@ -35,8 +36,10 @@ myActionOutside.listen(true);
 myActionOutside.listen(false);
 ```
 
-### demo [https://saschageyer.github.io/action-outside/](https://saschageyer.github.io/action-outside/)
+### [demo](https://saschageyer.github.io/action-outside/)
 ```javascript
+import ActionOutside from 'action-outside';
+
 const dropdown = document.querySelector('.dropdown');
 const dropdownButton = document.querySelector('.dropdown__button');
 const dropdownList = document.querySelector('.dropdown__list');
