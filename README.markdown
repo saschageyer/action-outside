@@ -1,18 +1,19 @@
 action-outside :mag_right:
 -------
- _Invoke a callback function when clicked or tabbed outside one or multiple DOM elements._
+_Invoke a callback function when clicked or tabbed outside one or multiple DOM elements._
 
- ```javascript
- const foo = document.querySelector('.foo');
- const myActionOutside = new ActionOutside(foo, () => {
-   console.log('clicked or tabbed outside of foo!');
- });
- myActionOutside.listen(true);
- ```
+```javascript
+import ActionOutside from 'action-outside';
+const foo = document.querySelector('.foo');
+const actionOutsideFoo = new ActionOutside(foo, () => {
+  console.log('clicked or tabbed outside foo!');
+});
+actionOutsideFoo.listen(true);
+```
 
-### NPM
+### [NPM](https://www.npmjs.com/package/action-outside)
 ```sh
-npm install action-outside
+npm install --save action-outside
 ```
 
 ### parameters
